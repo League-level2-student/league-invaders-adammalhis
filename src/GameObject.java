@@ -4,10 +4,22 @@ public class GameObject {
 	int y;
 	int width;
 	int height;
-	GameObject() {
+	int speed;
+	boolean isActive;
+	GameObject(int x, int y, int width, int height) {
 		x= 0;
 		y= 0;
 		width= 0;
 		height= 0;
+		speed= 0;
+		isActive= true;
+		
+	}
+	
+	void update() {
+		
+		
+		
+		
 	}
 }

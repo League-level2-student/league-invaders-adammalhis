@@ -1,9 +1,11 @@
+import java.awt.Color;
 
-public class Rocketship extends GameObject{
+public class Rocketship extends GameObject {
 	int x;
 	int y;
 	int width;
 	int height;
+	
 	
 	Rocketship(int x, int y, int width, int height) {
 		super(x, y, width, height);
@@ -11,9 +13,9 @@ public class Rocketship extends GameObject{
 		
 	}
 	
-	void draw() {
-		
-		
+	void draw(graphicObject g) {
+		g.setColor(Color.BLUE);
+		 g.fillRect(x, y, width, height);
 		
 	}
 }
