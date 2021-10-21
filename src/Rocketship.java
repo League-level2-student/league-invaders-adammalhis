@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class Rocketship extends GameObject {
 	int x;
@@ -13,7 +14,7 @@ public class Rocketship extends GameObject {
 		
 	}
 	
-	void draw(graphicObject g) {
+	void draw(Graphics g) {
 		g.setColor(Color.BLUE);
 		 g.fillRect(x, y, width, height);
 		
