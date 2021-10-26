@@ -7,12 +7,12 @@ public class GameObject {
 	int speed;
 	boolean isActive;
 	GameObject(int x, int y, int width, int height) {
-		x= 0;
-		y= 0;
-		width= 0;
-		height= 0;
-		speed= 0;
-		isActive= true;
+		this.x= x;
+		this.y= y;
+		this.width= width;
+		this.height= height;
+		this.speed= 1;
+		this.isActive= true;
 		
 	}
 	
