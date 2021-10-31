@@ -22,7 +22,7 @@ public class Rocketship extends GameObject {
 	}
 	
 	void down() {
-		if (y+10 != 310) {
+		if (y+10 != 730) {
 		y+= speed;
 		}
 	}
@@ -34,7 +34,7 @@ public class Rocketship extends GameObject {
 	}
 	
 	void right() {
-		if (x+10 != )
+		if (x+10 != 450)
 		x+= speed;
 	}
 }

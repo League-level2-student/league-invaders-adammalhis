@@ -90,7 +90,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}else if(currentState == END){
 		    updateEndState();
 		}
-		System.out.println("action");
+		//System.out.println("action");
 		repaint();
 	}
 	@Override
@@ -118,9 +118,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
 		    System.out.println("RIGHT");
+		    ship.right();
 		}
 		if (e.getKeyCode()==KeyEvent.VK_LEFT) {
 		    System.out.println("LEFT");
+		    ship.left();
 		}
 	}
 	@Override
