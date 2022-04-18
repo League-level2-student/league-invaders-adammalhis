@@ -19,6 +19,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     Font enterFont= new Font("Arial", Font.PLAIN, 24);
     Timer frameDraw;
     Rocketship ship= new Rocketship(250, 700, 50, 50);
+    ObjectManager OM= new ObjectManager(ship);
 
 	GamePanel() {
 		frameDraw= new Timer(1000/60, this);
@@ -43,7 +44,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		
 	}
 	void updateGameState() {
-		
+		ObjectManager.update();
 		
 		
 	}
