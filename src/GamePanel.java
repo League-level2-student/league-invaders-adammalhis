@@ -44,7 +44,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		
 	}
 	void updateGameState() {
-		ObjectManager.update();
+		OM.update();
 		
 		
 	}
@@ -67,8 +67,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	void drawGameState(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
-		ship.draw(g);
-		
+		OM.draw(g);
+		g.
 	}
 	void drawEndState(Graphics g) {
 		g.setColor(Color.RED);

@@ -39,6 +39,7 @@ public class ObjectManager {
 		for(int i=0; i<projectiles.size(); i++) {
 			draw(g);
 		}
+		rocket.draw(g);
 	}
 	void purgeObjects() {
 		for(int i=0; i<aliens.size(); i++) {
