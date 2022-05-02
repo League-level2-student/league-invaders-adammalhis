@@ -1,3 +1,6 @@
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -8,6 +11,7 @@ GamePanel panel= new GamePanel();
 
 public static final int WIDTH= 500;
 public static final int HEIGHT= 800;
+
 
 public static void main(String[] args) {
 	
