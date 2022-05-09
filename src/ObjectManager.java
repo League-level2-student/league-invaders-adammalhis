@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.Timer;
 
-public class ObjectManager implements ActionListener{
+public class ObjectManager implements ActionListener {
 	
 	Rocketship rocket;
 	ArrayList <Projectile>projectiles = new ArrayList<Projectile>();
@@ -63,7 +63,6 @@ public class ObjectManager implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		addAlien();
-		System.out.println("HI");
 	}
 	 
 	

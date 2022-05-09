@@ -20,6 +20,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     Font titleFont= new Font("Arial", Font.PLAIN, 48);
     Font enterFont= new Font("Arial", Font.PLAIN, 24);
     Timer frameDraw;
+    Timer alienSpawn;
     Rocketship ship= new Rocketship(250, 700, 50, 50);
     ObjectManager OM= new ObjectManager(ship);
     public static BufferedImage image;
@@ -34,6 +35,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 
 		
+	}
+	void startGame() {
+		alienSpawn= new Timer(1000, OM);
+		alienSpawn.start();
 	}
 	void loadImage(String imageFile) {
 	    if (needImage) {
@@ -131,10 +136,21 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
+		System.out.println(currentState);
 		if (e.getKeyCode()==KeyEvent.VK_ENTER) {
 		    if (currentState == END) {
 		        currentState = MENU;
-		    } else {
+		        startGame();
+		        ship= new Rocketship(250, 700, 50, 50);
+		        OM= new ObjectManager(ship);
+		    } 
+		    else if (currentState == GAME) {
+		    	currentState= END;
+		    	alienSpawn.restart();
+		    	alienSpawn.stop();
+		    }
+		    
+		    else {
 		        currentState++;
 		    }
 		 } 

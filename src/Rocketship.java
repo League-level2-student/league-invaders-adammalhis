@@ -64,6 +64,9 @@ public class Rocketship extends GameObject {
 		if (x+10 != 450)
 		x+= speed;
 	}
+	public Projectile getProjectile() {
+        return new Projectile(x+width/2, y, 10, 10);
+} 
 	
 
 
