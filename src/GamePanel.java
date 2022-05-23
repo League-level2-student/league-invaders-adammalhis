@@ -78,7 +78,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	void updateEndState() {
 		
 		
-		
+		 
 	}
 	
 	void drawMenuState(Graphics g) {
@@ -141,9 +141,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		if (currentState == GAME) {
 			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 				OM.addProjectile(ship.getProjectile());
+				System.out.println(OM.projectiles.size());
 			}
 		}
-		System.out.println(currentState);
 		if (e.getKeyCode()==KeyEvent.VK_ENTER) {
 		    if (currentState == END) {
 		        currentState = MENU;

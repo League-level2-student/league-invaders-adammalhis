@@ -20,7 +20,7 @@ public class Alien extends GameObject{
 	            e.printStackTrace();
 	        }
 	        needImage = false;
-	    }
+	    } 
 	}
 	
 	Alien(int x, int y, int width, int height) {
@@ -38,6 +38,7 @@ public class Alien extends GameObject{
 	}
 	
 	void draw(Graphics g) {
+		super.draw(g);
 		if (gotImage) {
 			g.drawImage(image, x, y, width, height, null);
 		}

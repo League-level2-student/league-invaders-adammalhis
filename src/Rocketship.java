@@ -22,6 +22,11 @@ public class Rocketship extends GameObject {
 	        needImage = false;
 	    }
 	}
+	void update() {
+		super.update();
+		
+	}
+	
 	
 	Rocketship(int x, int y, int width, int height) {
 		super(x, y, width, height);
@@ -33,6 +38,7 @@ public class Rocketship extends GameObject {
 	}
 	
 	void draw(Graphics g) {
+		super.draw(g);
 		 if (gotImage) {
 				g.drawImage(image, x, y, width, height, null);
 			} 

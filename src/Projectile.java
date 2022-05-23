@@ -8,7 +8,7 @@ public class Projectile extends GameObject{
 
 	public static BufferedImage image;
 	public static boolean needImage = true;
-	public static boolean gotImage = false;	
+	public static boolean gotImage = false;	 
 	
 	void loadImage(String imageFile) {
 	    if (needImage) {
@@ -38,6 +38,7 @@ public class Projectile extends GameObject{
 	}
 	
 	void draw(Graphics g) {
+		super.draw(g);
 		if (gotImage) {
 			g.drawImage(image, x, y, width, height, null);
 		}
