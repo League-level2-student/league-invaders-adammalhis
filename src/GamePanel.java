@@ -8,6 +8,7 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -102,6 +103,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			g.fillRect(0, 0, 500, 800);
 		}
 		OM.draw(g);
+		int score = OM.getScore();
+		g.setColor(Color.GREEN);
+		g.drawString("" + score, 20, 20);
 	}
 	
 	void drawEndState(Graphics g) {
@@ -111,7 +115,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.YELLOW);
 		g.drawString("Game Over", 110, 250);
 		g.setFont(enterFont);
-		g.drawString("You killed enemies", 130, 500);
+		g.drawString("You killed " + OM.score + " enemies", 130, 500);
 		g.drawString("Press ENTER to restart", 115, 750);
 		
 	}
@@ -138,10 +142,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
+		if (currentState == MENU) {
+			if (e.getKeyCode()==KeyEvent.VK_SPACE) {
+				JOptionPane.showMessageDialog(null, "This is league invaders. Press space to shoot aliens. the up down left and right keys are for moving. if the aliens touch you you lose. the more aliens you kill the higher your score will be.");
+			}
+		}
 		if (currentState == GAME) {
 			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 				OM.addProjectile(ship.getProjectile());
-				System.out.println(OM.projectiles.size());
 			}
 		}
 		if (e.getKeyCode()==KeyEvent.VK_ENTER) {

@@ -12,13 +12,16 @@ public class ObjectManager implements ActionListener {
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
 	Random random = new Random();
 	Timer alienTimer;
+	int score = 0;
 
 	ObjectManager(Rocketship rocket) {
 		this.rocket = rocket;
 		alienTimer = new Timer(1000, this);
 		alienTimer.start();
 	}
-
+	int getScore() {
+		return score;
+	}
 	void addProjectile(Projectile projectile1) {
 		projectiles.add(projectile1);
 	}
@@ -63,7 +66,7 @@ public class ObjectManager implements ActionListener {
 		}
 		for (int i = 0; i < projectiles.size(); i++) {
 			if (projectiles.get(i).isActive == false) {
-				projectiles.remove(i);
+				
 			}
 		}
 	}
@@ -76,6 +79,7 @@ public class ObjectManager implements ActionListener {
 				if (currentAlien.collisionBox.intersects(currentProjectile.collisionBox)) {
 					currentAlien.isActive = false;
 					currentProjectile.isActive = false;
+					score += 1;
 				}
 			}
 			if (rocket.collisionBox.intersects(currentAlien.collisionBox)) {
